@@ -31,6 +31,8 @@ const BarChart = ({ data, title, dataKey, xAxisKey = "name", height = 360 , axis
             dataKey={dataKey} 
             fill="#2563eb" 
             radius={[4, 4, 0, 0]}
+            barSize={60}
+
           />
         </RechartsBarChart>
       </ResponsiveContainer>
