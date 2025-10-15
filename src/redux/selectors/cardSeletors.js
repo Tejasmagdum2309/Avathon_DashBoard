@@ -24,8 +24,11 @@ export const filterdCardData = createSelector(
         
         let device = uniqueDevices.find(d => d.id === maxDutaionFaultDevice);
 
-        let returnData = [{ title : 'Total Faults', value: faults.length  } , { title : 'Total Faults Duration', value:   formatSeconds(totalSeconds)  }, { title : 'Average Fault Duration ', value: formatSeconds((totalSeconds / faults.length))  } , { title : "Device With Max Duration Alarm" , value : device?.name }];
+        console.log('totalSeconds : ' , totalSeconds);
 
+        let returnData = [{ title : 'Total Faults', value: faults.length  } , { title : 'Total Faults Duration', value:   formatSeconds(totalSeconds)  }, { title : 'Average Fault Duration ', value: formatSeconds((totalSeconds / faults.length))  } , { title : "Device With Max Duration Alarm" , value : device?.name }];
+        
+        console.log('returnData : ' , returnData);
         return returnData;
 
     } // have to return array of { title: '', value: '' }

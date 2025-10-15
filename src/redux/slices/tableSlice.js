@@ -28,7 +28,7 @@ const tableSlice = createSlice({
   initialState,
   reducers: {
     setCurrentSelectedFilter: (state, action) => {
-      console.log("Setting current selected filter to:", action.payload);
+      // console.log("Setting current selected filter to:", action.payload);
       state.currentSelectedFilter = action.payload;
     },
     setTableData: (state, action) => {
@@ -50,7 +50,7 @@ const tableSlice = createSlice({
 
       let data = [...state.tableData];
 
-      console.log('qqqq : ' , state.currentSelectedFilter);
+      // console.log('qqqq : ' , state.currentSelectedFilter);
       if(!state.currentSelectedFilter) return;  //  initial stage this will cause isssue ... so return..
 
       // initile select filter as we will go with this flow..

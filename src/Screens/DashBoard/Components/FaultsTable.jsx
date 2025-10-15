@@ -241,7 +241,7 @@ const FaultsTable = ({ data }) => {
     },
   ];
 
-  console.log("Table Data in FaultsTable:", data);
+  // console.log("Table Data in FaultsTable:", data);
 
   return (
     <TableComponent
@@ -256,19 +256,19 @@ const FaultsTable = ({ data }) => {
       }}
       filters={tableFilters}
       onChange={(pagination, filters, sorter) => {
-        console.log("Pagination:", pagination);
-        console.log("Filters:", filters);
-        console.log("Sorter:", sorter);
+        // console.log("Pagination:", pagination);
+        // console.log("Filters:", filters);
+        // console.log("Sorter:", sorter);
 
-        console.log(
-          "xxx :",
-          pagination.current !== current || pagination.pageSize !== pageSize,
-          " - ",
-          JSON.stringify(filters) !== JSON.stringify(tableFilters),
-          " - ",
-          sorter.field !== prevSorter?.field ||
-            sorter.order !== prevSorter?.order
-        );
+        // console.log(
+        //   "xxx :",
+        //   pagination.current !== current || pagination.pageSize !== pageSize,
+        //   " - ",
+        //   JSON.stringify(filters) !== JSON.stringify(tableFilters),
+        //   " - ",
+        //   sorter.field !== prevSorter?.field ||
+        //     sorter.order !== prevSorter?.order
+        // );
         // Compare with previous state (from Redux)
         if (
           pagination.current !== current ||
@@ -287,7 +287,7 @@ const FaultsTable = ({ data }) => {
           sorter.field !== prevSorter?.field ||
           sorter.order !== prevSorter?.order
         ) {
-          console.log("Dispatching sorter change:", sorter);
+          // console.log("Dispatching sorter change:", sorter);
           dispatch(
             setColumnSorter({
               column: sorter?.field,

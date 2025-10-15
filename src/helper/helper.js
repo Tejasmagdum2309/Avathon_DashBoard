@@ -49,7 +49,7 @@ export function formatMinutes(minutes) {
 
 
 export function formatSeconds(seconds) {
-   if (typeof minutes !== 'number' || isNaN(minutes)) {
+   if (typeof seconds !== 'number' || isNaN(seconds)) {
     return '0 sec'; // or any default message you prefer
   }
   const h = Math.floor(seconds / 3600);

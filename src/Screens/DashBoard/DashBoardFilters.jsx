@@ -2,12 +2,18 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Select, Space } from "antd";
 import { setDevice, setFarm } from "../../redux/slices/pageLevelSlice";
+import { filteredDevices } from "../../redux/selectors/pageSelector";
 
 const DashBoardFilters = () => {
   const { Option } = Select;
   const dispatch = useDispatch();
 
   const { windFarms, devices } = useSelector((state) => state.data);
+  const devicesFiltered = useSelector(filteredDevices);
+
+  const { farm, device } = useSelector((state) => state.pageLevel.filters);
+
+  // console.log("Devices Filtered:", devicesFiltered);
 
   // console.log("Wind Farms:", windFarms);
   // console.log("Devices:", devices);
@@ -17,8 +23,9 @@ const DashBoardFilters = () => {
       <Select
         placeholder="Wind Farm"
         style={{ width: 200 }}
-        onChange={(val) => dispatch(setFarm(val))}
+        onChange={(val) => { dispatch(setFarm(val)); dispatch(setDevice(null)); }}
         allowClear
+        value={farm}
       >
         {windFarms.map((farm) => (
           <Option key={farm.id} value={farm.id}>
@@ -33,8 +40,9 @@ const DashBoardFilters = () => {
         style={{ width: 200 }}
         onChange={(val) => dispatch(setDevice(val))}
         allowClear
+        value={device}
       >
-        {devices.map((device) => (
+        {devicesFiltered.map((device) => (
           <Option key={device.id} value={device.id}>
             {device.name}
           </Option>
