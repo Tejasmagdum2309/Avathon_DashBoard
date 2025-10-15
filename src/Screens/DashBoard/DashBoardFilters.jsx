@@ -9,8 +9,8 @@ const DashBoardFilters = () => {
 
   const { windFarms, devices } = useSelector((state) => state.data);
 
-  console.log("Wind Farms:", windFarms);
-  console.log("Devices:", devices);
+  // console.log("Wind Farms:", windFarms);
+  // console.log("Devices:", devices);
 
   return (
     <Space size="large" className="mb-8">
@@ -29,7 +29,7 @@ const DashBoardFilters = () => {
 
 
       <Select
-        placeholder="Wind Farm"
+        placeholder="Device"
         style={{ width: 200 }}
         onChange={(val) => dispatch(setDevice(val))}
         allowClear

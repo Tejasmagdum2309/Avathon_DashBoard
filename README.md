@@ -1,3 +1,13 @@
+# Wind Turbine Fault Dashboard
+
+## Project Setup
+
+### Install Dependencies And Run It
+```bash
+npm install
+npm run dev
+```
+
 🧩 Project Summary: Wind Turbine Fault Dashboard
 🎯 Goal
 
